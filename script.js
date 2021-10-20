@@ -1,6 +1,15 @@
 'use strict';
 
 const mymap = L.map('mapid').setView([52.19349790168748, 20.93058149735026], 17);
+// prettier-ignore
+const myLocation = L.control.locate({
+  position: 'topleft',
+  strings: {
+      title: "Locate me!"
+  },
+  flyTo: true,
+  onLocationError: 'An error occured',
+}).addTo(mymap);
 
 const titleLayer = L.tileLayer(
   'https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiamFja3RoZWJveCIsImEiOiJja3V5ZGJyZzgxd20xMnZvMGkyMTh2ejdyIn0.QEETAArtqcdGkIZcgtzEug',
