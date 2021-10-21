@@ -1,6 +1,5 @@
 :root {
-  --color-brand--1: #ffb545;
-  --color-brand--2: #00c46a;
+  --color-neon--1: rgba(57, 255, 20, 0.65);
 
   --color-dark--1: #2d3439;
   --color-dark--2: #42484d;
@@ -26,9 +25,59 @@ body {
   height: 100vh;
   background-color: #fff;
   padding: 2.5rem;
-  /* display: flex; */
+  display: flex;
+}
+.sidebar {
+  height: 100%;
+  flex: 0.4 1 5rem;
+  background-color: var(--color-dark--1);
+  padding: 3rem 5rem 4rem 5rem;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.logo {
+  height: 25rem;
+  align-self: center;
 }
 
 #mapid {
-  height: 80vh;
+  flex: 1;
+  height: 100%;
+  background: var(--color-light--1);
+}
+.filter-container {
+  height: 50%;
+}
+.filter-content {
+  height: auto;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: center;
+}
+.filter-header {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #aaa;
+}
+.filter-option {
+  font: 600 1.5rem 'Manrope', sans-serif;
+  margin: 2rem auto;
+  padding: 2rem;
+  width: 60%;
+}
+.btn-holder {
+  height: 80%;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: flex-end;
+}
+.find-parking {
+  font: 600 3rem 'Manrope', sans-serif;
+  height: 10rem;
+  align-self: stretch;
+  border-radius: 1rem;
+  background: var(--color-neon--1);
 }

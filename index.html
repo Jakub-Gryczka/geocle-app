@@ -17,8 +17,10 @@
       integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
       crossorigin=""
     />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css" />
     <!--standard css-->
-    <link rel="shortcut icon" type="image/png" href="/images/favicon.svg" />
+    <link rel="icon" href="images/favicon.png" />
     <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -26,6 +28,20 @@
     <title>Geocle</title>
   </head>
   <body>
+    <div class="sidebar">
+      <img src="images/logo.svg" alt="Logo" class="logo" />
+      <div class="filter-container">
+        <h1 class="filter-header">FILTERING</h1>
+        <div class="filter-content">
+          <button class="car filter-option">CAR</button>
+          <button class="truck filter-option">TRUCK</button>
+          <button class="available filter-option">AVAILABILITY</button>
+        </div>
+      </div>
+      <div class="btn-holder">
+        <button class="find-parking">FIND PARKING</button>
+      </div>
+    </div>
     <div id="mapid"></div>
   </body>
 </html>
@@ -41,4 +57,5 @@
   src="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@0.74.0/dist/L.Control.Locate.min.js"
   charset="utf-8"
 ></script>
+<script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
 <script src="script.js"></script>
