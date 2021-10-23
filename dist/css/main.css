@@ -1,5 +1,4 @@
-@import url(_globals.css);
-
+@import url(/_globals.css);
 :root {
   --color-neon--1: rgba(57, 255, 20, 0.65);
   --color-dark--1: #2d3439;
@@ -13,12 +12,16 @@
 * {
   margin: 0;
   padding: 0;
+  -webkit-box-sizing: inherit;
   box-sizing: inherit;
 }
+
 html {
   font-size: 62.5%;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
+
 body {
   font-family: 'Manrope', sans-serif;
   color: var(--color-light--2);
@@ -27,42 +30,70 @@ body {
   height: 100vh;
   background-color: #fff;
   padding: 2.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
+
 .sidebar {
   height: 100%;
+  -webkit-box-flex: 0.4;
+  -ms-flex: 0.4 1 5rem;
   flex: 0.4 1 5rem;
   background-color: var(--color-dark--1);
   padding: 3rem 5rem 4rem 5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
   overflow: hidden;
 }
+
 .logo {
   height: 25rem;
+  -ms-flex-item-align: center;
+  -ms-grid-row-align: center;
   align-self: center;
 }
 
 #mapid {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
   flex: 1;
   height: 100%;
   background: var(--color-light--1);
 }
+
 .filter-container {
   height: 50%;
 }
+
 .filter-content {
   height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: column wrap;
   flex-flow: column wrap;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
 }
+
 .filter-header {
   text-align: center;
   font-size: 2.5rem;
   color: #aaa;
 }
+
 .filter-option {
   border: none;
   background-color: transparent;
@@ -71,37 +102,68 @@ body {
   margin: 2rem auto;
   padding: 0.25em 0.75em;
   width: 60%;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   background-color: var(--color-button);
   border-radius: 8px;
+  -webkit-box-shadow: 0 3px 5px rgba(0, 0, 0, 0.18);
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.18);
   min-width: 10ch;
   min-height: 4.4rem;
   text-align: center;
   line-height: 1.1;
-  @media screen and (-ms-high-contrast: active) {
+}
+
+@media screen and (-ms-high-contrast: active) {
+  .filter-option {
     border: 2px solid currentcolor;
   }
 }
+
 .btn-holder {
   border: none;
   background-color: transparent;
   cursor: pointer;
   height: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: column nowrap;
   flex-flow: column nowrap;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
   justify-content: flex-end;
-  @media screen and (-ms-high-contrast: active) {
+}
+
+@media screen and (-ms-high-contrast: active) {
+  .btn-holder {
     border: 2px solid currentcolor;
   }
 }
+
 .find-parking {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -ms-flex-item-align: stretch;
   align-self: stretch;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   font: 600 3rem 'Manrope', sans-serif;
   height: 10rem;
@@ -109,3 +171,4 @@ body {
   background: var(--color-neon--1);
   cursor: pointer;
 }
+/*# sourceMappingURL=main.css.map */

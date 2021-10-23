@@ -63,7 +63,24 @@ const enigmaTruckBind = `<font size="4"><b>${vehicle1.name}</b></font>
     <br>Current promotions: ${vehicle1.promotion}
     <br>Description of the vehicle: ${vehicle1.description}
     <br>Metadata of the vehicle: ${vehicle1.metadata}
-    <br>ID of the vehicle: ${vehicle1.metadata}`;
+    <br>ID of the vehicle: ${vehicle1.id}`;
+
+const nissanCarBind = `<font size="4"><b>${vehicle2.name}</b></font>
+<br>Plates number: ${vehicle2.platesNumber}
+<br>Side number: ${vehicle2.sideNumber}
+<br>Vehicle color: ${vehicle2.color}
+<br>Type of vehicle: ${vehicle2.type}
+<br><b>Vehicle range in km: ${vehicle2.rangeKm}</b>
+<br><b>Battery level: ${vehicle2.batteryLevelPct}%</b>
+<br><b>Reservation ends in: ${vehicle2.reservationEnd}</b>
+<br><b>Vehicle is reserved by: ${vehicle2.reservation}</b>
+<br><b>Status of car: ${vehicle2.status}</b>
+<br><b>Location: ${vehicle2.locationDescription}</b>
+<br>Current promotions: ${vehicle2.promotion}
+<br>Description of the vehicle: ${vehicle2.description}
+<br>Metadata of the vehicle: ${vehicle2.metadata}
+<br>ID of the vehicle: ${vehicle2.id}`;
+
 const mymap = L.map('mapid').setView([52.19349790168748, 20.93058149735026], 13);
 
 const myLocation = L.control
@@ -117,42 +134,43 @@ const addressPoints = [
   [52.193275, 20.930372, vehicle2.name],
   [52.1935051400688, 20.93078771847324, '3'],
 ];
+const marker = [];
 const markers = L.markerClusterGroup();
 for (let i = 0; i < addressPoints.length; i++) {
   let a = addressPoints[i];
   let title = a[2];
-  let marker = L.marker(new L.LatLng(a[0], a[1]), {
+  marker[i] = 'siema';
+  marker[i] = L.marker(new L.LatLng(a[0], a[1]), {
     title: title,
   });
-  console.log(marker);
   if (title === `${vehicle1.name}`) {
-    marker.bindPopup(enigmaTruckBind);
-  } else {
-    marker.bindPopup(title);
+    marker[i].bindPopup(enigmaTruckBind);
+  } else if (title === `${vehicle2.name}`) {
+    marker[i].bindPopup(nissanCarBind);
   }
-  markers.addLayer(marker);
+  markers.addLayer(marker[i]);
 }
 mymap.addLayer(markers);
 // it's doing literally nothing
-const vehicles = [vehicle1, vehicle2];
-for (let i = 0; i < vehicles.length; i++) {
-  let a = vehicles[i];
-  let popup = `<font size="4"><b>${a.name}</b></font>
-  <br>Plates number: ${a.platesNumber}
-  <br>Side number: ${a.sideNumber}
-  <br>Vehicle color: ${a.color}
-  <br>Type of vehicle: ${a.type}
-  <br><b>Vehicle range in km: ${a.rangeKm}</b>
-  <br><b>Battery level: ${a.batteryLevelPct}%</b>
-  <br><b>Reservation ends in: ${a.reservationEnd}</b>
-  <br><b>Vehicle is reserved by: ${a.reservation}</b>
-  <br><b>Status of car: ${a.status}</b>
-  <br><b>Location: ${a.locationDescription}</b>
-  <br>Current promotions: ${a.promotion}
-  <br>Description of the vehicle: ${a.description}
-  <br>Metadata of the vehicle: ${a.metadata}
-  <br>ID of the vehicle: ${a.metadata}`;
-}
+// const vehicles = [vehicle1, vehicle2];
+// for (let i = 0; i < vehicles.length; i++) {
+//   let a = vehicles[i];
+//   let popup = `<font size="4"><b>${a.name}</b></font>
+//   <br>Plates number: ${a.platesNumber}
+//   <br>Side number: ${a.sideNumber}
+//   <br>Vehicle color: ${a.color}
+//   <br>Type of vehicle: ${a.type}
+//   <br><b>Vehicle range in km: ${a.rangeKm}</b>
+//   <br><b>Battery level: ${a.batteryLevelPct}%</b>
+//   <br><b>Reservation ends in: ${a.reservationEnd}</b>
+//   <br><b>Vehicle is reserved by: ${a.reservation}</b>
+//   <br><b>Status of car: ${a.status}</b>
+//   <br><b>Location: ${a.locationDescription}</b>
+//   <br>Current promotions: ${a.promotion}
+//   <br>Description of the vehicle: ${a.description}
+//   <br>Metadata of the vehicle: ${a.metadata}
+//   <br>ID of the vehicle: ${a.metadata}`;
+// }
 
 const truckIcon = L.icon({
   iconUrl: 'images/a_truck.png',
