@@ -1,15 +1,10 @@
 'use strict';
+const clusterGroup = document.querySelector('.marker-cluster');
 const parkingButton = document.querySelector('.find-parking');
 function flyToParking() {
   L.DomEvent.on(parkingButton, 'click', function () {
     const zoomlvl = 17;
     mymap.flyTo(parking1.getLatLng(), zoomlvl);
-  });
-}
-function flyToMarkers() {
-  L.DomEvent.on(markers, 'click', function () {
-    const zoomlvl = 13;
-    mymap.flyTo(markers.getLatLng(), zoomlvl);
   });
 }
 

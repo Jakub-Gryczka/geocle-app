@@ -1,30 +1,20 @@
-@import url(/_globals.css);
-:root {
-  --color-neon--1: rgba(57, 255, 20, 0.65);
-  --color-dark--1: #2d3439;
-  --color-dark--2: #42484d;
-  --color-light--1: #aaa;
-  --color-light--2: #ececec;
-  --color-light--3: rgb(214, 222, 224);
-  --color-button: #3e68ff;
-}
-
+@import url(_globals.css);
 * {
   margin: 0;
   padding: 0;
   -webkit-box-sizing: inherit;
-  box-sizing: inherit;
+          box-sizing: inherit;
 }
 
 html {
   font-size: 62.5%;
   -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 body {
   font-family: 'Manrope', sans-serif;
-  color: var(--color-light--2);
+  color: #ececec;
   font-weight: 400;
   line-height: 1.6;
   height: 100vh;
@@ -38,33 +28,33 @@ body {
 .sidebar {
   height: 100%;
   -webkit-box-flex: 0.4;
-  -ms-flex: 0.4 1 5rem;
-  flex: 0.4 1 5rem;
-  background-color: var(--color-dark--1);
+      -ms-flex: 0.4 1 5rem;
+          flex: 0.4 1 5rem;
+  background-color: #2d3439;
   padding: 3rem 5rem 4rem 5rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   overflow: hidden;
 }
 
 .logo {
   height: 25rem;
   -ms-flex-item-align: center;
-  -ms-grid-row-align: center;
-  align-self: center;
+      -ms-grid-row-align: center;
+      align-self: center;
 }
 
 #mapid {
   -webkit-box-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
+      -ms-flex: 1;
+          flex: 1;
   height: 100%;
-  background: var(--color-light--1);
+  background: #aaa;
 }
 
 .filter-container {
@@ -78,14 +68,14 @@ body {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -ms-flex-flow: column wrap;
-  flex-flow: column wrap;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .filter-header {
@@ -106,19 +96,32 @@ body {
   display: -ms-inline-flexbox;
   display: inline-flex;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  background-color: var(--color-button);
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #3e68ff;
   border-radius: 8px;
   -webkit-box-shadow: 0 3px 5px rgba(0, 0, 0, 0.18);
-  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.18);
+          box-shadow: 0 3px 5px rgba(0, 0, 0, 0.18);
   min-width: 10ch;
   min-height: 4.4rem;
   text-align: center;
   line-height: 1.1;
+  -webkit-transition: 220ms all ease-in-out;
+  transition: 220ms all ease-in-out;
+}
+
+.filter-option:hover, .filter-option:active {
+  background-color: #0037fe;
+}
+
+.filter-option:focus {
+  outline-style: solid;
+  outline-color: transparent;
+  -webkit-box-shadow: 0 0 0 4px #0029be;
+          box-shadow: 0 0 0 4px #0029be;
 }
 
 @media screen and (-ms-high-contrast: active) {
@@ -130,21 +133,20 @@ body {
 .btn-holder {
   border: none;
   background-color: transparent;
-  cursor: pointer;
   height: 50%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -ms-flex-flow: column nowrap;
-  flex-flow: column nowrap;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: end;
-  -ms-flex-pack: end;
-  justify-content: flex-end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 
 @media screen and (-ms-high-contrast: active) {
@@ -158,17 +160,41 @@ body {
   display: -ms-inline-flexbox;
   display: inline-flex;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   -ms-flex-item-align: stretch;
-  align-self: stretch;
+      align-self: stretch;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   font: 600 3rem 'Manrope', sans-serif;
+  padding: 0.25em 0.75em;
+  min-width: 10ch;
+  min-height: 1.4rem;
   height: 10rem;
-  border-radius: 1rem;
-  background: var(--color-neon--1);
-  cursor: pointer;
+  background-color: rgba(57, 255, 20, 0.65);
+  color: #fff;
+  border-radius: 8px;
+  -webkit-box-shadow: 0 3px 5px rgba(0, 0, 0, 0.18);
+          box-shadow: 0 3px 5px rgba(0, 0, 0, 0.18);
+  -webkit-transition: 220ms all ease-in-out;
+  transition: 220ms all ease-in-out;
+}
+
+.find-parking:hover, .find-parking:active {
+  background-color: rgba(35, 220, 0, 0.65);
+}
+
+.find-parking:focus {
+  outline-style: solid;
+  outline-color: transparent;
+  -webkit-box-shadow: 0 0 0 4px rgba(26, 165, 0, 0.65);
+          box-shadow: 0 0 0 4px rgba(26, 165, 0, 0.65);
+}
+
+@media screen and (-ms-high-contrast: active) {
+  .find-parking {
+    border: 2px solid currentcolor;
+  }
 }
 /*# sourceMappingURL=main.css.map */
