@@ -11,4 +11,4 @@ The project is simple map with cars for rent, it has a finding parking button, a
 
 # DEMO
 
-https://app.netlify.com/sites/heuristic-nightingale-1fdb47/overview
+https://heuristic-nightingale-1fdb47.netlify.app/
