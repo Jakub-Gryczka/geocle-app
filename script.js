@@ -2,7 +2,7 @@
 const parkingButton = document.querySelector('.find-parking');
 function flyToParking() {
   L.DomEvent.on(parkingButton, 'click', function () {
-    const zoomlvl = 17;
+    const zoomlvl = 18;
     mymap.flyTo(parking1.getLatLng(), zoomlvl);
   });
 }
