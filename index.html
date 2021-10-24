@@ -20,8 +20,8 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css" />
     <!--standard css-->
-    <link rel="icon" href="/assets/favicon.png" />
-    <link rel="stylesheet" href="css/main.css" />
+    <link rel="icon" href="assets/favicon.png" />
+    <link rel="stylesheet" href="dist/css/main.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&display=swap" rel="stylesheet" />
@@ -29,14 +29,14 @@
   </head>
   <body>
     <div class="sidebar">
-      <img src="/assets/logo.svg" alt="Logo" class="logo" />
+      <img src="assets/logo.svg" alt="Logo" class="logo" />
       <div class="filter-container">
         <h1 class="filter-header">FILTERING</h1>
         <div class="filter-content">
-          <button class="car filter-option">CAR</button>
-          <button class="truck filter-option">TRUCK</button>
-          <button class="available filter-option">AVAILABILITY</button>
-          <button class="show all filter-option">SHOW ALL</button>
+          <button id="car-filter" class="filter-option">CAR</button>
+          <button id="truck-filter" class="filter-option">TRUCK</button>
+          <button id="availablity-filter" class="filter-option">AVAILABILITY</button>
+          <button id="show-all-filter" class="filter-option">SHOW ALL</button>
         </div>
       </div>
       <div class="btn-holder">
@@ -59,4 +59,4 @@
   charset="utf-8"
 ></script>
 <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
-<script src="/script.js"></script>
+<script src="script.js"></script>
