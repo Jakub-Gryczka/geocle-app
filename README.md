@@ -1,4 +1,4 @@
-# GEOCLE-APP
+# ENIGMA SOI task GEOCLE-APP
 
 **Version 1.0.0**
 
